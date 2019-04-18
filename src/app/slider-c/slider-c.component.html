@@ -1,0 +1,51 @@
+<div class="title-header">
+  <h2 class="t-header">About</h2>
+</div>
+<div class="text__slider">
+  <div class="slider__block container-fluid" [ngClass]="{'container': container }" >
+    <div class="row">
+      <ul class="slider__wrapper">
+        <li class="slider__item active" [ngClass]="{'active': activeItem}"  >
+          <h3 class="s-header">Hi, my name is Andrew and I`m Front-end developer. </h3>
+          <p class="s-title">
+              I have 2 years experience in web development.My main responsibilities is layout of new pages from PSD layouts
+            Adaptation of new and ready pages for mobile devices
+            Implementation of JavaScript logic (sliders, popups, animations, AJAX, etc.)
+            Integration of new modules into finished projects!
+          </p>
+        </li>
+        <li class="slider__item" [ngClass]="{'active': activeItem2 }" >
+          <h3 class="s-header">My skills:</h3>
+          <div class="s-icon">
+            <div class="s-icon-container" *ngFor="let i of Icons" >
+              <div class="icon"><i class="fab {{i.name}}"></i></div>
+                <div class="progress__block">
+                  <progress max="100" value={{i.value}}></progress>
+                  <div class="progress-value">{{i.value}}%</div>
+                  <div class="progress-bg"><div class="progress-bar"></div></div>
+                </div>
+            </div>
+          </div>
+        </li>
+        <li class="slider__item" [ngClass]="{'active': activeItem3 }" >
+          <h3 class="s-header">My skills:</h3>
+          <div class="s-icon">
+            <div class="s-icon-container" *ngFor="let i of Icons2" >
+              <div class="icon"><i class="fab {{i.name}}"></i></div>
+                <div class="progress__block">
+                  <progress max="100" value={{i.value}}></progress>
+                  <div class="progress-value">{{i.value}}%</div>
+                  <div class="progress-bg"><div class="progress-bar"></div></div>
+                </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="control">
+        <input class="slider__nav" type="radio" name="slider" title="slide1" (click)="onSelected(1)" checked="checked"/>
+        <input class="slider__nav" type="radio" name="slider" (click)="onSelected(2)"  title="slide2"/>
+        <input class="slider__nav" type="radio" name="slider" (click)="onSelected(3)"  title="slide3"/>
+      </div>
+    </div>
+  </div>
+</div>

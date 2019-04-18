@@ -1,0 +1,59 @@
+<div class="header__title">
+  <h2>Contact</h2>
+  <hr>
+  <p></p>
+
+</div>
+<section class="contact__section">
+
+  <div class="contact__wrapper">
+    <form action="" name="contactForm">
+      <div class="form-group">
+        <label for="firstName" class="bmd-label-floating">First Name</label>
+        <input type="text" name="first" class="form-control" id="firstName" [(ngModel)]="client.nameFirst" #first="ngModel" required>
+      </div>
+      <div class="form-group">
+        <label for="lastName" class="bmd-label-floating">Last Name</label>
+        <input type="text" name="last" class="form-control" id="lastName"
+               [(ngModel)]="client.nameLast"
+               #last="ngModel"
+               required
+        >
+      </div>
+      <div class="form-group bmd-form-group">
+        <label for="emailE" class="bmd-label-floating">Email</label>
+        <input type="email" name="email" class="form-control" id="emailE"
+          [(ngModel)]="client.email"
+               #email="ngModel"
+               required email
+               pattern="[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}"
+        >
+      </div>
+      <div class="form-group">
+        <label for="messageTextarea" class="bmd-label-floating">Your Message</label>
+        <textarea class="form-control" name="message" id="messageTextarea" rows="3"
+          [(ngModel)]="client.message"
+                  #message="ngModel"
+                  required
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-raised"
+              [disabled]="first.invalid || last.invalid || email.invalid  || message.invalid"
+              (click)="sendMessage()">Submit</button>
+    </form>
+    <aside class="contact__info">
+      <address class="postal__address" typeof="PostalAddress">
+        <p>
+          <span property="addressCity">Lviv, </span>
+          <span property="addressCountry">Ukraine.</span>
+        </p>
+      </address>
+      <address property="email">
+        <a href="mailto:tolochkevich410@gmail.com">tolochkevich410@gmail.com</a>
+      </address>
+      <address property="tel" class="tel">
+        <a href="tel:+380631489639">+38(063) 14 89 639</a>
+      </address>
+    </aside>
+  </div>
+</section>

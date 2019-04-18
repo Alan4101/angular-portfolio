@@ -1,0 +1,10 @@
+.parallax{
+    min-height: 500px;
+    background: url('/assets/img/img_parallax.jpg') repeat fixed center;
+    background-size: cover;
+}
+.about__me{
+    height: 600px;
+    background: #ffffff;
+    color: #adaf;
+}
