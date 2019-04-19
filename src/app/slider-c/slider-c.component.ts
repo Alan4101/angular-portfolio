@@ -38,7 +38,7 @@ export class SliderCComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.Progress();
+    // this.Progress();
   }
   onSelected(item: any):void{
     if(item==1){

@@ -26,6 +26,7 @@
     width: 600px;
     max-width: 100%;
     margin: 0 auto;
+    height: 310px;
     letter-spacing: 0.05em;
     line-height: 30px;
     text-indent: 1.5em;
@@ -53,6 +54,7 @@
     margin: 0 auto;
 }
 .slider__item{
+    width: 100%;
     display: none;
     transition: .3s all;
 }

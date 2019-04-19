@@ -7,6 +7,7 @@ import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from "@angular/router";
+import {CardModule} from 'primeng/card';
 
 import { HeaderComponentComponent } from './header-component/header-component.component';
 import { WorkItemsComponent } from './work-items/work-items.component';
@@ -28,7 +29,8 @@ import { SliderCComponent } from './slider-c/slider-c.component';
       BrowserAnimationsModule,
       NgbModule,
       FormsModule,
-      RouterModule
+      RouterModule,
+      CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
