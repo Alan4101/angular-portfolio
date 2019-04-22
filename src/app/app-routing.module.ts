@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { WorkItemsComponent} from "./work-items/work-items.component";
-import { ContactComponent } from "./contact/contact.component";
-import { HeaderComponentComponent } from "./header-component/header-component.component";
-import { AdminComponent } from "./admin/admin.component";
-import {PostComponent} from "./post/post.component";
+import { WorkItemsComponent} from "./client-component/work-items/work-items.component";
+import { ContactComponent } from "./client-component/contact/contact.component";
+import { HeaderComponentComponent } from "./client-component/header-component/header-component.component";
+import { AdminComponent } from "./admin-component/admin/admin.component";
+import {PostComponent} from "./admin-component/post/post.component";
 
 
 const routes: Routes = [

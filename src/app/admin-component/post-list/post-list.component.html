@@ -1,0 +1,35 @@
+<form class="form-inline">
+    <div class="form-group">
+        <label for="search" class="bmd-label-floating">Search</label>
+        <input type="search" name="search" class="form-control" id="search"
+               #search="ngModel" [(ngModel)]="searchText">
+
+    </div>
+    <button class="btn btn-primary-modal" (click)="searchText='' ">X</button>
+</form>
+<table>
+  <thead>
+  <th></th>
+  <th>Title</th>
+  <th>Url</th>
+  <th>Description</th>
+  </thead>
+  <tbody>
+  <ng-container *ngFor="let item of works; index as i">
+      <tr *ngIf="filterCondition(item)">
+          <td>{{i+1}}</td>
+          <td>{{item.title}}</td>
+          <td>{{item.picture}}</td>
+          <td>{{item.address_url}}</td>
+          <td>{{item.description}}</td>
+          <td>
+              <button (click)="firebaseService.editWork(item)">Delete</button>
+              <button (click)="onDelete(item.$key)">Delete</button>
+          </td>
+      </tr>
+  </ng-container>
+  </tbody>
+</table>
+<div class="alert alert-danger" *ngIf="showDeleteMsg">
+    Deleted successfully!
+</div>

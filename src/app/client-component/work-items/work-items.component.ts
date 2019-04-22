@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CardModule} from 'primeng/card';
+import { CardModule } from 'primeng/card';
 
 @Component({
   selector: 'app-work-items',
@@ -11,6 +11,7 @@ export class WorkItemsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

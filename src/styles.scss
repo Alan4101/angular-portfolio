@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~primeicons/primeicons.css";
+@import "~primeng/resources/themes/nova-light/theme.css";
+@import "~primeng/resources/primeng.min.css";
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower|Raleway');
 @for $i from 0 through 100 {
   .progress__block progress[value="#{$i}"]
@@ -139,17 +142,6 @@ $active-color: #333;
         }
       }
     }
-  }
-
-  &__wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100% * $slider-length;
-    height: 100%;
-    transition: all 1s ease-out;
-    display: flex;
-    flex-flow: row nowrap;
   }
 
   &__item {

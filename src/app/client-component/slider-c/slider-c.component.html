@@ -3,18 +3,18 @@
 </div>
 <div class="text__slider">
   <div class="slider__block container-fluid" [ngClass]="{'container': container }" >
-    <div class="row">
-      <ul class="slider__wrapper">
-        <li class="slider__item active" [@slider]=" actives ? 'active' : 'disabled' "  >
+    <div class="row " style="flex-direction: column">
+      <ul class="slider__wrapper" >
+        <li class="slider__item" *ngIf="counterSlide==0 " @slider >
           <h3 class="s-header">Hi, my name is Andrew and I`m Front-end developer. </h3>
-          <p class="s-title">
+          <p class="s-title" style="height: 278px;">
               I have 2 years experience in web development.My main responsibilities is layout of new pages from PSD layouts
             Adaptation of new and ready pages for mobile devices
             Implementation of JavaScript logic (sliders, popups, animations, AJAX, etc.)
             Integration of new modules into finished projects!
           </p>
         </li>
-        <li class="slider__item"  [@slider]=" actives ? 'active' : 'disabled' ">
+        <li class="slider__item" *ngIf="counterSlide==1 " @slider>
           <h3 class="s-header">My skills:</h3>
           <div class="s-icon">
             <div class="s-icon-container" *ngFor="let i of Icons" >
@@ -27,7 +27,7 @@
             </div>
           </div>
         </li>
-        <li class="slider__item" [ngClass]="{'active': activeItem3 }" >
+        <li class="slider__item" *ngIf="counterSlide==2 " @slider  >
           <h3 class="s-header">My skills:</h3>
           <div class="s-icon">
             <div class="s-icon-container" *ngFor="let i of Icons2" >
@@ -42,9 +42,9 @@
         </li>
       </ul>
       <div class="control">
-        <input class="slider__nav" type="radio" name="slider" title="slide1" (click)="toggle()" checked="checked"/>
-        <input class="slider__nav" type="radio" name="slider" (click)="toggle()"  title="slide2"/>
-        <input class="slider__nav" type="radio" name="slider" (click)="toggle()"  title="slide3"/>
+        <input class="slider__nav" type="radio" name="slider" (click)="showSlide(0)" checked="checked"/>
+        <input class="slider__nav" type="radio" name="slider" (click)="showSlide(1)"  />
+        <input class="slider__nav" type="radio" name="slider" (click)="showSlide(2)" />
       </div>
     </div>
   </div>

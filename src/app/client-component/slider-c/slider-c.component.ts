@@ -8,14 +8,12 @@ import { transition, animate, style, trigger, state } from "@angular/animations"
   styleUrls: ['./slider-c.component.css'],
   animations: [
       trigger('slider',[
-          state('active',style({
-              display: 'block'
+          state('void',style({
+              transform: 'scale(0.8)',
+              opacity: 0
           })),
-          state('disabled', style({
-              display: 'none'
-          })),
-          transition('active => disabled', [
-              animate('1s')
+          transition('void => *', [
+              animate('0.5s ease-in-out')
           ])
       ]),
   ]
@@ -40,40 +38,19 @@ export class SliderCComponent implements OnInit {
         {name:  'fa-adobe', value: 70},
         {name: 'fa-angular', value: 70}
     ];
-
-  public activeItem: boolean = true;
-  public activeItem2: boolean;
-  public activeItem3: boolean;
-
-  actives: boolean = true;
-  // Progress(){
-  //     new progress;
-  // }
-
-  constructor() { }
+  counterSlide: number = 0;
+  constructor() {}
 
   ngOnInit() {
-    // this.Progress();
   }
-  toggle(){
-      this.actives = !this.actives;
+  showSlide(count: number){
+      if (this.counterSlide < count) {
+          this.counterSlide = count;
+      } else {
+          this.counterSlide = count;
+      }
   }
-  onSelected(item: any):void{
-    if(item==1){
-        this.activeItem = true;
-        this.activeItem2 = false;
-        this.activeItem3 = false;
-    }else if(item==2){
-        this.activeItem = false;
-        this.activeItem2 = true;
-        this.activeItem3 = false;
-    }
-    else{
-        this.activeItem = false;
-        this.activeItem3 = true;
-        this.activeItem2 = false;
-    }
-  }
+
 
 
 }
