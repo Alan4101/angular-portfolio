@@ -16,7 +16,7 @@ export class FirebaseService{
         title: new FormControl('', Validators.required),
         address_url: new FormControl('', Validators.required),
         picture: new FormControl('', Validators.required),
-        description: new FormControl('', [Validators.required, Validators.minLength(50)])
+        description: new FormControl('', [Validators.required, Validators.minLength(10)])
     });
 
     getWorks(){

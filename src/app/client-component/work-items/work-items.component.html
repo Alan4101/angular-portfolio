@@ -1,15 +1,14 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
-      <p-card header="Advanced Card" subheader="Subheader" [style]="{width: '360px'}" styleClass="ui-card-shadow">
-        <p-header>
-          <img src="Card" src="assets/img/img_parallax.jpg">
-        </p-header>
-        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt!</div>
-        <p-footer>
-          <button pButton type="button" icon="pi pi-times" class="ui-button-secondary">dfdd</button>
-        </p-footer>
-      </p-card>
+  <div class="row" style="justify-content: center">
+    <div class="col-lg-3 col-md-4 col-sm-12 item__block" *ngFor="let item of worksItem">
+      <div class="card__box">
+        <img class="card__img" src="{{item.picture}}" alt="{{item.title}}">
+        <div class="card__body">
+          <h5 class="card__title">{{item.title}}</h5>
+          <p class="card__text">{{item.description}}</p>
+          <a href="{{item.address_url}}" class="btn link__site" target="_blank">{{item.title}}</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
