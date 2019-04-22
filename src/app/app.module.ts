@@ -13,7 +13,17 @@ import { HeaderComponentComponent } from './header-component/header-component.co
 import { WorkItemsComponent } from './work-items/work-items.component';
 import { ContactComponent } from './contact/contact.component';
 import { SliderCComponent } from './slider-c/slider-c.component';
+//firebase
+import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+// import { AngularFireDatabase} from "@angular/fire/database";
+import { AngularFireStorageModule} from "@angular/fire/storage";
 
+import { environment } from "../environments/environment";
+//admin component
+import { AdminComponent } from './admin/admin.component';
+import { PostComponent } from './post/post.component';
+import { PostListComponent } from './post-list/post-list.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +31,10 @@ import { SliderCComponent } from './slider-c/slider-c.component';
     HeaderComponentComponent,
     WorkItemsComponent,
     ContactComponent,
-    SliderCComponent
+    SliderCComponent,
+    AdminComponent,
+    PostComponent,
+    PostListComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +43,11 @@ import { SliderCComponent } from './slider-c/slider-c.component';
       NgbModule,
       FormsModule,
       RouterModule,
-      CardModule
+      CardModule,
+      AngularFireModule.initializeApp(environment.firebase),
+      AngularFirestoreModule,
+      // AngularFireDatabase,
+      AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

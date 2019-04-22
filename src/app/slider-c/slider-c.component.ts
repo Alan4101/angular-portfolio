@@ -1,10 +1,24 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { transition, animate, style, trigger, state } from "@angular/animations";
 
 // declare var progress: any;
 @Component({
   selector: 'app-slider-c',
   templateUrl: './slider-c.component.html',
-  styleUrls: ['./slider-c.component.css']
+  styleUrls: ['./slider-c.component.css'],
+  animations: [
+      trigger('slider',[
+          state('active',style({
+              display: 'block'
+          })),
+          state('disabled', style({
+              display: 'none'
+          })),
+          transition('active => disabled', [
+              animate('1s')
+          ])
+      ]),
+  ]
 })
 export class SliderCComponent implements OnInit {
 
@@ -19,7 +33,7 @@ export class SliderCComponent implements OnInit {
       {name: 'fa-sass', value: 70}
 
   ];
-    Icons2: any [] = [
+  Icons2: any [] = [
         {name: 'fa-git', value: 80},
         {name: 'fa-wordpress', value: 70},
         {name: 'fa-npm', value: 70},
@@ -31,6 +45,7 @@ export class SliderCComponent implements OnInit {
   public activeItem2: boolean;
   public activeItem3: boolean;
 
+  actives: boolean = true;
   // Progress(){
   //     new progress;
   // }
@@ -39,6 +54,9 @@ export class SliderCComponent implements OnInit {
 
   ngOnInit() {
     // this.Progress();
+  }
+  toggle(){
+      this.actives = !this.actives;
   }
   onSelected(item: any):void{
     if(item==1){
