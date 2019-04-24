@@ -26,6 +26,8 @@ import { SocialLinkComponent } from './client-component/social-link/social-link.
 
 import {AngularFirestore} from "@angular/fire/firestore";
 
+import {PanelMenuModule} from 'primeng/panelmenu';
+import {MenuItem} from 'primeng/api';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +50,8 @@ import {AngularFirestore} from "@angular/fire/firestore";
       CardModule,
       AngularFireModule.initializeApp(environment.firebase),
       AngularFireDatabaseModule,
-      ReactiveFormsModule
+      ReactiveFormsModule,
+      MenuItem, PanelMenuModule
   ],
   providers: [
       { provide: FirestoreSettingsToken, useValue: {} },

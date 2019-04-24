@@ -1,32 +1,33 @@
-<p>hi</p>
-<form [formGroup]="this.FirebaseService.form" (ngSubmit)="onSubmit()" action="">
-    <input type="hidden" formControlName="$key">
-    <div class="form-group">
-        <label for="title" class="bmd-label-floating">Title</label>
-        <input type="text" name="title" class="form-control" id="title" formControlName="title"
-        [ngClass] = "{'is-valid': submitted && formControls.title.errors}"
-        >
-        <div class="invalid-feedback" *ngIf="submitted && formControls.title.errors">
-            This field is required.
+<div class="form__block">
+    <form [formGroup]="this.FirebaseService.form" (ngSubmit)="onSubmit()" >
+        <input type="hidden" formControlName="$key">
+        <div class="form-group">
+            <label for="title" class="bmd-label-floating">Title</label>
+            <input type="text" name="title" class="form-control" id="title" formControlName="title"
+                   [ngClass] = "{'is-valid': submitted && formControls.title.errors}"
+            >
+            <div class="invalid-feedback" *ngIf="submitted && formControls.title.errors">
+                This field is required.
+            </div>
         </div>
+        <div class="form-group">
+            <label for="address" class="bmd-label-floating">Url address</label>
+            <input type="url" name="address" class="form-control" id="address"
+                   formControlName="address_url">
+        </div>
+        <div class="form-group">
+            <label for="messageTextarea" class="bmd-label-floating">Description</label>
+            <textarea class="form-control" name="description" id="messageTextarea"  rows="8"
+                      formControlName="description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="img" class="bmd-label-floating">Picture</label>
+            <input type="text" name="img" class="form-control" id="img"
+                   formControlName="picture">
+        </div>
+        <button type="submit" class="btn btn-primary btn-raised">Submit</button>
+    </form>
+    <div class="alert alert-info"  *ngIf="showSuccessMessage">
+        Submitted successfully.
     </div>
-    <div class="form-group">
-        <label for="address" class="bmd-label-floating">Url address</label>
-        <input type="url" name="address" class="form-control" id="address"
-               formControlName="address_url">
-    </div>
-    <div class="form-group">
-        <label for="messageTextarea" class="bmd-label-floating">Description</label>
-        <textarea class="form-control" name="description" id="messageTextarea"  rows="8"
-                  formControlName="description"></textarea>
-    </div>
-    <div class="form-group">
-        <label for="img" class="bmd-label-floating">Picture</label>
-        <input type="text" name="img" class="form-control" id="img"
-               formControlName="picture">
-    </div>
-    <button type="submit" class="btn btn-primary btn-raised">Submit</button>
-</form>
-<div class="alert alert-info"  *ngIf="showSuccessMessage">
-    Submitted successfully.
 </div>
