@@ -1,13 +1,24 @@
 <div class="container">
-  <div class="row" style="justify-content: center">
-    <div class="col-lg-3 col-md-4 col-sm-12 item__block" *ngFor="let item of worksItem">
-      <div class="card__box">
-        <img class="card__img" src="{{item.picture}}" alt="{{item.title}}">
-        <div class="card__body">
-          <h5 class="card__title">{{item.title}}</h5>
-          <p class="card__text">{{item.description}}</p>
-          <a href="{{item.address_url}}" class="btn link__site" target="_blank">{{item.title}}</a>
+  <div class="row">
+    <div class="col head__block">
+      <h2 class="title__head">My resent works</h2>
+      <p class="subtitle__head">Here are a few recent design projects. Want to see more? <a href="mailto:andriy410tolochkevitch@gmail.com">Email</a></p>
+    </div>
+  </div>
+  <div class="row wrapper">
+    <div class="col-lg-4 col-sm-12 item__block" *ngFor="let item of worksItem"  >
+      <div class="card__box" >
+        <div class="card__box_before" (mouseenter)="onHover($event)" (mouseleave)="onHover($event)"
+            *ngIf="state"
+             [@hover]="state" (@hover.done)="onDone($event)">
+          <img class="card__img" src="{{item.picture}}" alt="{{item.title}}">
+          <!--<div class="card__body">-->
+          <!--<h5 class="card__title">{{item.title}}</h5>-->
+          <!--<p class="card__text">{{item.description}}</p>-->
+          <!--<a href="{{item.address_url}}" class="btn link__site" target="_blank">{{item.title}}</a>-->
+          <!--</div>-->
         </div>
+
       </div>
     </div>
   </div>
