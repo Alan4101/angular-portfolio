@@ -6,20 +6,19 @@
     </div>
   </div>
   <div class="row wrapper">
-    <div class="col-lg-4 col-sm-12 item__block" *ngFor="let item of worksItem"  >
-      <div class="card__box" >
-        <div class="card__box_before" (mouseenter)="onHover($event)" (mouseleave)="onHover($event)"
-            *ngIf="state"
-             [@hover]="state" (@hover.done)="onDone($event)">
+    <div class="col-lg-4 col-sm-12 item__block" *ngFor="let item of worksItem; let i = index" >
+        <app-item>
           <img class="card__img" src="{{item.picture}}" alt="{{item.title}}">
-          <!--<div class="card__body">-->
-          <!--<h5 class="card__title">{{item.title}}</h5>-->
-          <!--<p class="card__text">{{item.description}}</p>-->
-          <!--<a href="{{item.address_url}}" class="btn link__site" target="_blank">{{item.title}}</a>-->
-          <!--</div>-->
-        </div>
 
-      </div>
+          <!--<div class="card__body">-->
+          <h5 class="card__title">{{item.title}}</h5>
+          <ng-container card__box_before></ng-container>
+          {{i}}
+          <!--<p class="card__text">{{description}}</p>-->
+          <!--<a href="{{address}}" class="btn link__site" target="_blank">{{title}}</a>-->
+          <!--</div>-->
+
+        </app-item>
     </div>
   </div>
 </div>

@@ -1,18 +1,7 @@
-<div class="row wrapper">
-  <div class="col-lg-4 col-sm-12 item__block" *ngFor="let item of worksItem"  >
-    <div class="card__box" >
-      <div class="card__box_before"
-           *ngIf="state"
-           [@hover]="state"
-           (@hover.done)="onDone($event)">
-        <img class="card__img" src="{{item.picture}}" alt="{{item.title}}">
-        <!--<div class="card__body">-->
-        <!--<h5 class="card__title">{{item.title}}</h5>-->
-        <!--<p class="card__text">{{item.description}}</p>-->
-        <!--<a href="{{item.address_url}}" class="btn link__site" target="_blank">{{item.title}}</a>-->
-        <!--</div>-->
-      </div>
-
+<ng-content></ng-content>
+    <div class="overlay"
+         *ngIf="state"
+         [@hover]="state"
+         (@hover.done)="onDone($event)">
+        <ng-content select="[overlay]"></ng-content>
     </div>
-  </div>
-</div>
