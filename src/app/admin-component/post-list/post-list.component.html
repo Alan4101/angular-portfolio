@@ -7,32 +7,37 @@
     </div>
     <button class="btn btn-primary-modal" (click)="searchText='' ">X</button>
 </form>
-<table class="table">
-    <thead class="thead-dark">
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col"></th>
-        <th scope="col">Title</th>
-        <th scope="col">Url</th>
-        <th scope="col">Description</th>
-        <th scope="col"></th>
-    </tr>
-    </thead>
-    <tbody>
-    <ng-container *ngFor="let item of works; index as i">
-        <tr class="tr_table" scope="row" *ngIf="filterCondition(item)">
-            <td>{{i+1}}</td>
-            <td><img class="img_p" src="{{item.picture}}" alt="{{item.title}}"></td>
-            <td>{{item.title}}</td>
-            <td>{{item.address_url}}</td>
-            <td>{{item.description}}</td>
-            <td>
-                <button class="btn primary" (click)="firebaseService.editWork(item)">Edit</button>
-                <button class="btn primary" (click)="onDelete(item.$key)">Delete</button>
-            </td>
-        </tr>
-    </ng-container>
+<div class="container block__style">
+    <div class="row">
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col"></th>
+                <th scope="col">Title</th>
+                <th scope="col">Url</th>
+                <th scope="col">Description</th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <ng-container *ngFor="let item of works; index as i">
+                <tr class="tr_table" scope="row" *ngIf="filterCondition(item)">
+                    <td>{{i+1}}</td>
+                    <td><img class="img_p" src="{{item.picture}}" alt="{{item.title}}"></td>
+                    <td>{{item.title}}</td>
+                    <td>{{item.address_url}}</td>
+                    <td>{{item.description}}</td>
+                    <td>
+                        <button class="btn primary" (click)="firebaseService.editWork(item)"><i class="fas fa-pencil-alt"></i></button>
+                        <!--<button class="btn primary" (click)="firebaseService.updateWork(item)">Edit</button>-->
+                        <button class="btn primary" (click)="onDelete(item.$key)"><i class="far fa-trash-alt"></i></button>
+                    </td>
+                </tr>
+            </ng-container>
+            </tbody>
+        </table>
+    </div>
 
 
-    </tbody>
-</table>
+</div>

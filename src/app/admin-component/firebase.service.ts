@@ -32,9 +32,11 @@ export class FirebaseService{
         })
     }
     editWork(item){
-        this.form.setValue(item)
+        this.form.setValue(item);
+        console.log(item);
     }
     updateWork(item){
+
         this.workItems.update(item.key,{
             title: item.title,
             address_url: item.address_url,

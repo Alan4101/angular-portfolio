@@ -18,10 +18,12 @@ export class PostComponent implements OnInit {
   onSubmit(){
     this.submitted = true;
     if(this.FirebaseService.form.valid){
-        if(this.FirebaseService.form.get('$key').value == null)
+        if(this.FirebaseService.form.get('$key').value == null){
             this.FirebaseService.createWork(this.FirebaseService.form.value);
-            else
-                this.FirebaseService.updateWork(this.FirebaseService.form.value);
+        } else{
+            this.FirebaseService.updateWork(this.FirebaseService.form.value);
+
+        }
             this.showSuccessMessage = true;
             setTimeout(()=> this.showSuccessMessage = false, 3000);
 
