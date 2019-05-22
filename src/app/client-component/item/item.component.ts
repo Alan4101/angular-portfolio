@@ -1,22 +1,22 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { AnimationEvent } from '@angular/animations';
 import {HoverContainerAnimations} from "./hover-container.animation";
 
 @Component({
   selector: 'app-item',
-  templateUrl: './item.component.html',
+  templateUrl: '<ng-content></ng-content>'+
+    '<div class="overlay" '+
+        '*ngIf="state" '+
+        '[@hover]="state" '+
+        '(@hover.done)="onDone($event)">'+
+      '<ng-content select="[overlay]"></ng-content>'+
+    '</div>',
   styleUrls: ['./item.component.css'],
-    animations: HoverContainerAnimations,
+  animations: HoverContainerAnimations,
 })
-export class ItemComponent implements OnInit {
+export class ItemComponent{
 
-
-  state;
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+    state;
 
     @HostListener('mouseenter', ['$event'])
     @HostListener('mouseleave', ['$event'])
@@ -35,7 +35,5 @@ export class ItemComponent implements OnInit {
 
     onDone(event: AnimationEvent) {
         this.state = event.toState.startsWith('out-') ? null : this.state;
-        console.log(this.state);
     }
-
 }
