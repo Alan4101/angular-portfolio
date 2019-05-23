@@ -3,20 +3,22 @@
   <div class="row">
     <div class="col-1">
       <div class="left__block">
+        <!--<h3>Services</h3>-->
         <aside class="nav__admin">
           <ul>
-            <!--<li><a routerLink="admin"><i class="fas fa-plus"></i> <span class="text__hide">Close</span></a></li>-->
+            <li><a  (click)="adminPanel()" ><i class="far fa-arrow-alt-circle-up"></i><span class="text__hide">Admin</span></a></li>
             <li><a [routerLink]="['/admin', {outlets: {'nameNew': ['new']}}]"><i class="fas fa-plus"></i> <span class="text__hide">Add</span></a></li>
             <li><a [routerLink]="['/admin', {outlets: {'nameView': ['view']}}]"><i class="far fa-list-alt"></i> <span class="text__hide">List</span></a></li>
           </ul>
         </aside>
       </div>
     </div>
-    <div class="col-11" style="flex-direction: column; display: flex">
-
+    <router-outlet></router-outlet>
+    <div class="col-4" style="flex-direction: column; display: flex">
       <router-outlet name="nameNew"></router-outlet>
+    </div>
+    <div class="col-7">
       <router-outlet name="nameView"></router-outlet>
-
     </div>
   </div>
 </div>

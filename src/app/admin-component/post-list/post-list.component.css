@@ -10,6 +10,20 @@
 .block__style{
     box-shadow: 2px 1px 7px -2px #868686;
 }
+.form-inline{
+    width: 100%;
+}
+.form-control{
+    margin: 2em 0 0;
+    width: 500px;
+    max-width: 100%;
+}
+.bmd-form-group {
+    padding-top: 0;
+}
+.btn__close{
+    margin-top: 25px;
+}
 :host{
     /*background: #d8d8d8;*/
 }
