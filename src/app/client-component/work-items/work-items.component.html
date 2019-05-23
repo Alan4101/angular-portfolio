@@ -6,9 +6,10 @@
     </div>
   </div>
   <div class="row wrapper">
-    <div  class="col-lg-4 col-sm-12 item__block" *ngFor="let item of worksItem" >
+    <div  class="col-lg-4 col-sm-12 item__block" *ngFor="let item of worksItem"  >
+          <img  class="card__img" src="{{item.picture}}" alt="{{item.title}}">
           <img (load)="getColor($event)" class="card__img" src="{{item.picture}}" alt="{{item.title}}">
-      <div class="card__body" [ngStyle]="{'background-color': color}">
+      <div class="card__body" [ngStyle]="{'background-color': c}">
         <h5 class="card__title">{{item.title}}</h5>
         <p class="card__text">{{item.description}}</p>
           <a href="{{item.address_url}}" class="btn link__site" target="_blank">{{item.title}}</a>

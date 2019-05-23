@@ -1,5 +1,6 @@
 import { Component, OnInit, } from '@angular/core';
 import { FirebaseService } from "../../admin-component/firebase.service";
+import {forEach} from "@angular/router/src/utils/collection";
 
 @Component({
   selector: 'app-work-items',
@@ -20,11 +21,10 @@ export class WorkItemsComponent implements OnInit {
             ...item.payload.val()
         }
       })
-    })
-
+    });
   }
 
-  color: any;
+  color: string;
 
   getAverageRGB(imgEl) {
 
@@ -71,13 +71,19 @@ export class WorkItemsComponent implements OnInit {
         return rgb;
 
     }
+
   getColor(event: any){
       const ev = event.target;
       const host = this.getAverageRGB(ev);
       this.colorItems.push(this.color = `rgba(${host.r}, ${host.g}, ${host.b}, .8)`);
 
-      console.log(this.colorItems);
+      const imgs = document.querySelectorAll<HTMLElement>('.card__img');
+      for(let el =0; el< imgs.length; el++){
+          console.log(imgs[el]);
+      }
+      console.log(imgs);
   }
+
 
 
 
