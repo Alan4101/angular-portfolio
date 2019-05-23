@@ -1,4 +1,4 @@
-import { Component, HostListener, Input } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { AnimationEvent } from '@angular/animations';
 import {HoverContainerAnimations} from "./hover-container.animation";
 

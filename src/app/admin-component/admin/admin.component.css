@@ -1,12 +1,59 @@
 .left__block{
     background: #1c2a48;
     position: fixed;
-    top:0;
+    top:0px;
     left: 0;
     width: 160px;
     height: 100%;
-    z-index: -99;
+    /*z-index: -99;*/
 }
 :host{
     background: #a8a8a8;
+}
+.nav__admin{
+    display: flex;
+    justify-content: center;
+    margin: 50% auto;
+}
+.nav__admin>ul{
+    padding-left: 0;
+}
+.nav__admin>ul>li{
+    margin: 1em;
+    color: #2af699;
+    list-style-type: none;
+    -webkit-transition: .2s ;
+    -moz-transition: .2s ;
+    -ms-transition: .2s ;
+    -o-transition: .2s ;
+    transition: .2s ;
+}
+.nav__admin>ul>li>a{
+    font-size: 18px;
+    font-family: Raleway, sans-serif;
+    padding: 0.5em;
+    margin: 0.5em;
+    color: #27d783;
+    text-decoration: none;
+    z-index: 999999;
+}
+.nav__admin>ul>li>a:hover{
+    border-bottom: 2px solid #2af699;
+
+}
+.text__hide{
+    padding: 10px;
+    opacity: 0;
+    transition: .2s;
+}
+.nav__admin>ul>li>a:hover{
+    color: #1b935b;
+}
+.nav__admin>ul>li:hover{
+    margin-left: 5px;
+}
+
+.nav__admin:hover .text__hide{
+    opacity: 1;
+    transform: scale(1.01);
 }

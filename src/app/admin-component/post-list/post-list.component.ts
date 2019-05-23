@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
 import { FirebaseService } from "../firebase.service";
+import { SearchService} from "../searchService";
 
 @Component({
   selector: 'app-post-list',
@@ -7,12 +8,11 @@ import { FirebaseService } from "../firebase.service";
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent implements OnInit {
-
+  searchText: string = '';
   works = [];
   showDeleteMsg: boolean;
-  searchText: string = "";
 
-  constructor( private firebaseService: FirebaseService) { }
+  constructor( private firebaseService: FirebaseService, private searchServ: SearchService) { }
 
   ngOnInit() {
     this.firebaseService.getWorks().subscribe( list =>{
@@ -23,6 +23,9 @@ export class PostListComponent implements OnInit {
         }
       })
     })
+  }
+  onSearch(item){
+    return this.searchServ.filterCondition(item, this.searchText);
   }
   onDelete($key){
     if(confirm('Are U sure to delete this item-record?')){

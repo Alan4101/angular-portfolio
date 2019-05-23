@@ -39,7 +39,7 @@ import { ItemComponent } from './client-component/item/item.component';
     PostComponent,
     PostListComponent,
     SocialLinkComponent,
-    ItemComponent
+    ItemComponent,
   ],
   imports: [
     BrowserModule,
